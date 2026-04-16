@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Foodies Delight</title>
+    <link rel="icon" type="image/png" href="./images/resturant-logo1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./images/resturant-logo1.png" alt="Foodies Delight Logo" class="logo-icon">
+                <span>Foodies Delight</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="menu.html" class="nav-link active">Menu</a>
+                    <div class="dropdown-menu">
+                        <a href="menu.html?category=veg">Veg</a>
+                        <a href="menu.html?category=non-veg">Non-Veg</a>
+                        <a href="menu.html?category=snacks">Snacks</a>
+                        <a href="menu.html?category=drinks">Drinks</a>
+                        <a href="menu.html?category=desserts">Desserts</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search dishes...">
+                <button class="search-btn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero Section -->
+    <section class="menu-hero">
+        <div class="menu-hero-content">
+            <h1>Our Delicious Menu</h1>
+            <p>Discover our carefully crafted dishes made with fresh ingredients</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <div class="container">
+            <!-- Categories -->
+            <div class="menu-categories">
+                <button class="category-btn active" data-filter="all">All</button>
+                <button class="category-btn" data-filter="veg">Veg</button>
+                <button class="category-btn" data-filter="non-veg">Non-Veg</button>
+                <button class="category-btn" data-filter="snacks">Snacks</button>
+                <button class="category-btn" data-filter="drinks">Drinks</button>
+                <button class="category-btn" data-filter="desserts">Desserts</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid">
+                <!-- Veg Card -->
+                <div class="menu-card" data-category="veg">
+                    <div class="menu-card-img">
+                        <img src="./images/Idli-Sambar-3.webp" alt="Idli Sambar">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Idli Sambar</h3>
+                            <span class="price">₹80</span>
+                        </div>
+                        <p>Steamed rice cakes served with lentil soup and fresh coconut chutney.</p>
+                        <button class="add-to-cart-btn" data-item="Idli Sambar">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Non-Veg Card -->
+                <div class="menu-card" data-category="non-veg">
+                    <div class="menu-card-img">
+                        <img src="./images/royal-rice-may-220461.jpg" alt="Chicken Biryani">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Chicken Biryani</h3>
+                            <span class="price">₹250</span>
+                        </div>
+                        <p>Aromatic basmati rice cooked with tender chicken pieces and whole Indian spices.</p>
+                        <button class="add-to-cart-btn" data-item="Chicken Biryani">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Snacks Card -->
+                <div class="menu-card" data-category="snacks">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop" alt="Samosa">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Punjabi Samosa</h3>
+                            <span class="price">₹40</span>
+                        </div>
+                        <p>Crispy pastry filled with spiced potatoes and peas, served with mint chutney.</p>
+                        <button class="add-to-cart-btn" data-item="Punjabi Samosa">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Drinks Card -->
+                <div class="menu-card" data-category="drinks">
+                    <div class="menu-card-img">
+                        <img src="./images/Filter_1500x.webp" alt="Filter Coffee">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>South Indian Filter Coffee</h3>
+                            <span class="price">₹40</span>
+                        </div>
+                        <p>Traditional frothy filter coffee brewed from freshly roasted and ground beans.</p>
+                        <button class="add-to-cart-btn" data-item="Filter Coffee">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Desserts Card -->
+                <div class="menu-card" data-category="desserts">
+                    <div class="menu-card-img">
+                        <img src="./images/soft-gulab-jamun.webp" alt="Gulab Jamun">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Gulab Jamun</h3>
+                            <span class="price">₹60</span>
+                        </div>
+                        <p>Soft milk dumplings deep-fried and soaked in flavored sugar syrup.</p>
+                        <button class="add-to-cart-btn" data-item="Gulab Jamun">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Veg Card 2 -->
+                <div class="menu-card" data-category="veg">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&h=400&fit=crop" alt="Masala Dosa">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Masala Dosa</h3>
+                            <span class="price">₹120</span>
+                        </div>
+                        <p>Crispy fermented crepe filled with savory potato masala, served with chutneys.</p>
+                        <button class="add-to-cart-btn" data-item="Masala Dosa">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Non-Veg Card 2 -->
+                <div class="menu-card" data-category="non-veg">
+                    <div class="menu-card-img">
+                        <img src="./images/Mutton Chukka Sukka  recipe.jpg" alt="Mutton Chukka">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Mutton Chukka</h3>
+                            <span class="price">₹300</span>
+                        </div>
+                        <p>Spicy, dry-roasted tender mutton pieces tossed with pepper and curry leaves.</p>
+                        <button class="add-to-cart-btn" data-item="Mutton Chukka">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Snacks Card 2 -->
+                <div class="menu-card" data-category="snacks">
+                    <div class="menu-card-img">
+                        <img src="./images/Onion-Pakoda-2-3.jpg" alt="Onion Pakoda">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Crispy Onion Pakoda</h3>
+                            <span class="price">₹45</span>
+                        </div>
+                        <p>Deep-fried onion fritters made with gram flour and aromatic Indian spices.</p>
+                        <button class="add-to-cart-btn" data-item="Crispy Onion Pakoda">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Drinks Card 2 -->
+                <div class="menu-card" data-category="drinks">
+                    <div class="menu-card-img">
+                        <img src="./images/Masala-Chai-.jpg" alt="Masala Chai">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Masala Chai</h3>
+                            <span class="price">₹30</span>
+                        </div>
+                        <p>Aromatic Indian tea brewed with milk, cardamom, ginger, and cloves.</p>
+                        <button class="add-to-cart-btn" data-item="Masala Chai">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Desserts Card 2 -->
+                <div class="menu-card" data-category="desserts">
+                    <div class="menu-card-img">
+                        <img src="./images/akkaravadisil-0525Blog.webp" alt="Paal Payasam">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Paal Payasam</h3>
+                            <span class="price">₹70</span>
+                        </div>
+                        <p>Traditional South Indian rice pudding slow-cooked in rich milk and ghee.</p>
+                        <button class="add-to-cart-btn" data-item="Paal Payasam">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Veg Card 3 -->
+                <div class="menu-card" data-category="veg">
+                    <div class="menu-card-img">
+                        <img src="./images/pongal-ven-pongal-500x500.jpg" alt="Ven Pongal">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Ven Pongal</h3>
+                            <span class="price">₹90</span>
+                        </div>
+                        <p>Comforting South Indian breakfast made of rice and lentils seasoned with black pepper and cumin.</p>
+                        <button class="add-to-cart-btn" data-item="Ven Pongal">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <!-- Non-Veg Card 3 -->
+                <div class="menu-card" data-category="non-veg">
+                    <div class="menu-card-img">
+                        <img src="./images/Chicken-Chettinad-Curry-2-3.jpg" alt="Chettinad Chicken">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Chettinad Chicken</h3>
+                            <span class="price">₹220</span>
+                        </div>
+                        <p>A classic South Indian dish with tender chicken slow-cooked in fiery aromatic spices.</p>
+                        <button class="add-to-cart-btn" data-item="Chettinad Chicken">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Snacks Card 3 -->
+                <div class="menu-card" data-category="snacks">
+                    <div class="menu-card-img">
+                        <img src="./images/poha_vada_featured.jpg" alt="Medu Vada">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Medu Vada</h3>
+                            <span class="price">₹50</span>
+                        </div>
+                        <p>Crispy deep-fried lentil donuts with a fluffy interior, served with coconut chutney.</p>
+                        <button class="add-to-cart-btn" data-item="Medu Vada">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Drinks Card 3 -->
+                <div class="menu-card" data-category="drinks">
+                    <div class="menu-card-img">
+                        <img src="./images/masala-buttermilk.webp" alt="Neer Mor">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Neer Mor (Buttermilk)</h3>
+                            <span class="price">₹30</span>
+                        </div>
+                        <p>Refreshing spiced buttermilk garnished with coriander, ginger, and curry leaves.</p>
+                        <button class="add-to-cart-btn" data-item="Neer Mor">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Desserts Card 3 -->
+                <div class="menu-card" data-category="desserts">
+                    <div class="menu-card-img">1
+                        <img src="./images/images.jpg" alt="Rasmalai">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Rasmalai</h3>
+                            <span class="price">₹80</span>
+                        </div>
+                        <p>Flattened cheese balls soaked in a sweetened, thickened milk flavored with cardamom.</p>
+                        <button class="add-to-cart-btn" data-item="Rasmalai">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Foodies Delight</h4>
+                    <p>Premium dining experience since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@FoodiesDelight.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/login/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/login" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Foodies Delight Restaurant. All rights reserved.</p>
+                <p class="developer-credit">Design and Developed by Manikandan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Add to Cart -->
+    <div id="addToCartModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h2>Added to Cart</h2>
+            <p id="modalMessage"></p>
+            <button class="modal-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

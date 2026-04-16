@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Foodies Delight</title>
+    <link rel="icon" type="image/png" href="./images/resturant-logo1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./images/resturant-logo1.png" alt="Foodies Delight Logo" class="logo-icon">
+                <span>Foodies Delight</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="menu.html" class="nav-link">Menu</a>
+                    <div class="dropdown-menu">
+                        <a href="menu.html?category=veg">Veg</a>
+                        <a href="menu.html?category=non-veg">Non-Veg</a>
+                        <a href="menu.html?category=snacks">Snacks</a>
+                        <a href="menu.html?category=drinks">Drinks</a>
+                        <a href="menu.html?category=desserts">Desserts</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+            </ul>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search dishes...">
+                <button class="search-btn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1>Get In Touch</h1>
+                <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-infos-container">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-details">
+                                <h3>Address</h3>
+                                <p>12/A, Foodie Lane<br>T. Nagar, Chennai - 600017<br>Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-details">
+                                <h3>Phone</h3>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-details">
+                                <h3>Email</h3>
+                                <p>info@FoodiesDelight.com<br>reservations@FoodiesDelight.com</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fas fa-clock"></i></div>
+                            <div class="info-details">
+                                <h3>Hours</h3>
+                                <p>Mon - Thu: 10am - 10pm<br>Fri - Sun: 10am - 11pm</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="faq-section">
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="accordion-container">
+                            <div class="accordion-item">
+                                <button class="accordion-header">What are your timings? <i class="fas fa-chevron-down indicator-icon"></i></button>
+                                <div class="accordion-content">
+                                    <p>We are open from 10:00 AM to 10:00 PM from Monday to Thursday, and 10:00 AM to 11:00 PM from Friday to Sunday.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">Do you offer delivery? <i class="fas fa-chevron-down indicator-icon"></i></button>
+                                <div class="accordion-content">
+                                    <p>Yes, we offer home delivery within a 5-mile radius of our restaurant. You can order online through our website or delivery partners.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">How can I make a reservation? <i class="fas fa-chevron-down indicator-icon"></i></button>
+                                <div class="accordion-content">
+                                    <p>You can make a reservation by filling out our contact form on this page with the subject "Reservation Inquiry," or by calling us directly.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">Do you host private events or parties? <i class="fas fa-chevron-down indicator-icon"></i></button>
+                                <div class="accordion-content">
+                                    <p>Yes, we have a dedicated event space for private gatherings, birthdays, and corporate events. Please contact us for specialized catering menus and availability.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">Are pets allowed at the restaurant? <i class="fas fa-chevron-down indicator-icon"></i></button>
+                                <div class="accordion-content">
+                                    <p>We welcome well-behaved pets on our outdoor patio area. However, for hygiene reasons, pets are not permitted inside the main dining hall.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="reservation">Reservation Inquiry</option>
+                                <option value="catering">Catering Services</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="subscribe" name="subscribe">
+                            <label for="subscribe">Subscribe to our newsletter for special offers</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn" onclick="submitBtn()">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Foodies Delight</h4>
+                    <p>Premium dining experience since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@FoodiesDelight.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/login/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/login" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Foodies Delight Restaurant. All rights reserved.</p>
+                <p class="developer-credit">Design and Developed by Manikandan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-icon success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thank you for reaching out. We'll get back to you soon.</p>
+            <button class="modal-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+
+</body>
+</html>

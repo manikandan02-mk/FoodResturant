@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodies Delight </title>
+    <link rel="icon" type="image/png" href="./images/resturant-logo1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./images/resturant-logo1.png" alt="Foodies Delight Logo" class="logo-icon">
+                <span>Foodies Delight</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="menu.html" class="nav-link">Menu</a>
+                    <div class="dropdown-menu">
+                        <a href="menu.html?category=veg">Veg</a>
+                        <a href="menu.html?category=non-veg">Non-Veg</a>
+                        <a href="menu.html?category=snacks">Snacks</a>
+                        <a href="menu.html?category=drinks">Drinks</a>
+                        <a href="menu.html?category=desserts">Desserts</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search dishes...">
+                <button class="search-btn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel Banner -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-slide active" data-category="veg">
+                <img src="./images/veg-meals.png" alt="Vegetarian">
+                <div class="carousel-content">
+                    <h1>Fresh Veg-meals</h1>
+                    <p>Healthy and delicious vegetarian dishes</p>
+                    <a href="menu.html?category=veg" class="carousel-btn">Explore Now</a>
+                </div>
+            </div>
+
+            <div class="carousel-slide" data-category="non-veg">
+                <img src="./images/chicken-items.png" alt="Non-Vegetarian">
+                <div class="carousel-content">
+                    <h1>Premium Meat Dishes</h1>
+                    <p>Succulent and flavorful non-vegetarian specialties</p>
+                    <a href="menu.html?category=non-veg" class="carousel-btn">Explore Now</a>
+                </div>
+            </div>
+
+            <div class="carousel-slide" data-category="snacks">
+                <img src="./images/samsa-samosas-with-meat.jpg" alt="Snacks">
+                <div class="carousel-content">
+                    <h1>Crispy Snacks</h1>
+                    <p>Perfect appetizers and quick bites</p>
+                    <a href="menu.html?category=snacks" class="carousel-btn">Explore Now</a>
+                </div>
+            </div>
+
+            <div class="carousel-slide" data-category="drinks">
+                <img src="./images/drinks.png" alt="Drinks">
+                <div class="carousel-content">
+                    <h1>Refreshing Beverages</h1>
+                    <p>Cool drinks to complement your meal</p>
+                    <a href="menu.html?category=drinks" class="carousel-btn">Explore Now</a>
+                </div>
+            </div>
+
+            <div class="carousel-slide" data-category="desserts">
+                <img src="./images/desserts.png" alt="Desserts">
+                <div class="carousel-content">
+                    <h1>Sweet Indulgences</h1>
+                    <p>Delightful desserts to end your meal</p>
+                    <a href="menu.html?category=desserts" class="carousel-btn">Explore Now</a>
+                </div>
+            </div>
+
+            <button class="carousel-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
+                <button class="indicator" data-slide="3"></button>
+                <button class="indicator" data-slide="4"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured-section">
+        <div class="container">
+            <h2>Why Choose Foodies Delight?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Fresh Ingredients</h3>
+                    <p>We use only the freshest and finest ingredients sourced locally.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-person"></i>
+                    <h3>Expert Chefs</h3>
+                    <p>Our talented team brings culinary excellence to every dish.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Quality Service</h3>
+                    <p>We prioritize your experience with exceptional customer service.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Award Winning</h3>
+                    <p>Recognized for our dedication to culinary excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Foodies Delight</h4>
+                    <p>Premium dining experience since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@FoodiesDelight.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/login/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/login" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Foodies Delight Restaurant. All rights reserved.</p>
+                <p class="developer-credit">Design and Developed by Manikandan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
