@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Foodies Delight</title>
-    <link rel="icon" type="image/png" href="./images/resturant-logo1.png">
+    <title>Menu - Heavenly Bites</title>
+    <link rel="icon" type="image/png" href="./images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -13,8 +13,8 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="./images/resturant-logo1.png" alt="Foodies Delight Logo" class="logo-icon">
-                <span>Foodies Delight</span>
+                <img src="./images/logo.png" alt="Heavenly Bites Logo" class="logo-icon" style="height: 40px; border-radius: 5px;">
+                <span>Heavenly Bites</span>
             </a>
 
             <ul class="nav-menu">
@@ -24,15 +24,18 @@
                 <li class="nav-item dropdown">
                     <a href="menu.html" class="nav-link active">Menu</a>
                     <div class="dropdown-menu">
-                        <a href="menu.html?category=veg">Veg</a>
-                        <a href="menu.html?category=non-veg">Non-Veg</a>
-                        <a href="menu.html?category=snacks">Snacks</a>
-                        <a href="menu.html?category=drinks">Drinks</a>
-                        <a href="menu.html?category=desserts">Desserts</a>
+                        <a href="menu.html?category=cakes">Cakes</a>
+                        <a href="menu.html?category=ice-creams">Ice Creams</a>
+                        <a href="menu.html?category=pastries">Pastries</a>
+                        <a href="menu.html?category=chocolates">Chocolates</a>
+                        <a href="menu.html?category=international">International Specials</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="franchise.html" class="nav-link">Franchise</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
@@ -57,8 +60,8 @@
     <!-- Menu Hero Section -->
     <section class="menu-hero">
         <div class="menu-hero-content">
-            <h1>Our Delicious Menu</h1>
-            <p>Discover our carefully crafted dishes made with fresh ingredients</p>
+            <h1>Our Sweet Menu</h1>
+            <p>Discover our carefully crafted desserts made with premium ingredients</p>
         </div>
     </section>
 
@@ -68,265 +71,331 @@
             <!-- Categories -->
             <div class="menu-categories">
                 <button class="category-btn active" data-filter="all">All</button>
-                <button class="category-btn" data-filter="veg">Veg</button>
-                <button class="category-btn" data-filter="non-veg">Non-Veg</button>
-                <button class="category-btn" data-filter="snacks">Snacks</button>
-                <button class="category-btn" data-filter="drinks">Drinks</button>
-                <button class="category-btn" data-filter="desserts">Desserts</button>
+                <button class="category-btn" data-filter="cakes">Cakes</button>
+                <button class="category-btn" data-filter="ice-creams">Ice Creams</button>
+                <button class="category-btn" data-filter="pastries">Pastries</button>
+                <button class="category-btn" data-filter="chocolates">Chocolates</button>
+                <button class="category-btn" data-filter="international">International Specials</button>
             </div>
 
             <!-- Menu Grid -->
             <div class="menu-grid">
-                <!-- Veg Card -->
-                <div class="menu-card" data-category="veg">
+                <!-- Cakes -->
+                <div class="menu-card" data-category="cakes">
                     <div class="menu-card-img">
-                        <img src="./images/Idli-Sambar-3.webp" alt="Idli Sambar">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop" alt="Chocolate Truffle Cake">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
-                            <h3>Idli Sambar</h3>
-                            <span class="price">₹80</span>
+                            <h3>Chocolate Truffle Cake</h3>
+                            <span class="price">₹550</span>
                         </div>
-                        <p>Steamed rice cakes served with lentil soup and fresh coconut chutney.</p>
-                        <button class="add-to-cart-btn" data-item="Idli Sambar">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        <p>Rich and decadent layers of dark chocolate sponge and smooth truffle ganache.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Chocolate Truffle Cake" data-price="550">
+                            <i class="fas fa-cart-plus"></i> Order Now
                         </button>
                     </div>
                 </div>
 
-                <!-- Non-Veg Card -->
-                <div class="menu-card" data-category="non-veg">
+                <div class="menu-card" data-category="cakes">
                     <div class="menu-card-img">
-                        <img src="./images/royal-rice-may-220461.jpg" alt="Chicken Biryani">
+                        <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=600&h=400&fit=crop" alt="Red Velvet Cake">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
-                            <h3>Chicken Biryani</h3>
-                            <span class="price">₹250</span>
+                            <h3>Red Velvet Cake</h3>
+                            <span class="price">₹600</span>
                         </div>
-                        <p>Aromatic basmati rice cooked with tender chicken pieces and whole Indian spices.</p>
-                        <button class="add-to-cart-btn" data-item="Chicken Biryani">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        <p>Classic soft red velvet sponge layered with signature cream cheese frosting.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Red Velvet Cake" data-price="600">
+                            <i class="fas fa-cart-plus"></i> Order Now
                         </button>
                     </div>
                 </div>
 
-                <!-- Snacks Card -->
-                <div class="menu-card" data-category="snacks">
+                <div class="menu-card" data-category="cakes">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop" alt="Samosa">
+                        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&h=400&fit=crop" alt="Black Forest Cake">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
-                            <h3>Punjabi Samosa</h3>
-                            <span class="price">₹40</span>
+                            <h3>Black Forest Cake</h3>
+                            <span class="price">₹580</span>
                         </div>
-                        <p>Crispy pastry filled with spiced potatoes and peas, served with mint chutney.</p>
-                        <button class="add-to-cart-btn" data-item="Punjabi Samosa">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        <p>Chocolate sponge cake with a rich cherry filling based on the German dessert.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Black Forest Cake" data-price="580">
+                            <i class="fas fa-cart-plus"></i> Order Now
                         </button>
                     </div>
                 </div>
 
-                <!-- Drinks Card -->
-                <div class="menu-card" data-category="drinks">
+                <!-- Ice Creams -->
+                <div class="menu-card" data-category="ice-creams">
                     <div class="menu-card-img">
-                        <img src="./images/Filter_1500x.webp" alt="Filter Coffee">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c8e9e533?w=600&h=400&fit=crop" alt="Vanilla Bean Ice Cream">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
-                            <h3>South Indian Filter Coffee</h3>
-                            <span class="price">₹40</span>
+                            <h3>Vanilla Bean Ice Cream</h3>
+                            <span class="price">₹150</span>
                         </div>
-                        <p>Traditional frothy filter coffee brewed from freshly roasted and ground beans.</p>
-                        <button class="add-to-cart-btn" data-item="Filter Coffee">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        <p>Classic, creamy ice cream made with real Madagascar vanilla beans.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Vanilla Bean Ice Cream" data-price="150">
+                            <i class="fas fa-cart-plus"></i> Order Now
                         </button>
                     </div>
                 </div>
 
-                <!-- Desserts Card -->
-                <div class="menu-card" data-category="desserts">
+                <div class="menu-card" data-category="ice-creams">
                     <div class="menu-card-img">
-                        <img src="./images/soft-gulab-jamun.webp" alt="Gulab Jamun">
+                        <img src="https://images.unsplash.com/photo-1570197781417-0c7f1a3a60a7?w=600&h=400&fit=crop" alt="Strawberry Swirl">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
-                            <h3>Gulab Jamun</h3>
-                            <span class="price">₹60</span>
+                            <h3>Strawberry Swirl Ice Cream</h3>
+                            <span class="price">₹180</span>
                         </div>
-                        <p>Soft milk dumplings deep-fried and soaked in flavored sugar syrup.</p>
-                        <button class="add-to-cart-btn" data-item="Gulab Jamun">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        <p>Fresh strawberry ice cream rippled with sweet fruit compote.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Strawberry Swirl Ice Cream" data-price="180">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="ice-creams">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1557142046-c704a3adf364?w=600&h=400&fit=crop" alt="Chocolate Fudge Ice Cream">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Chocolate Fudge Ice Cream</h3>
+                            <span class="price">₹190</span>
+                        </div>
+                        <p>Rich chocolate ice cream blended with gooey fudge brownies.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Chocolate Fudge Ice Cream" data-price="190">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pastries -->
+                <div class="menu-card" data-category="pastries">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f40ce88cb?w=600&h=400&fit=crop" alt="Butter Croissant">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>French Butter Croissant</h3>
+                            <span class="price">₹120</span>
+                        </div>
+                        <p>Authentic, flaky, and buttery pastry freshly baked every morning.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="French Butter Croissant" data-price="120">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="pastries">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=400&fit=crop" alt="Fruit Tart">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Fresh Fruit Tart</h3>
+                            <span class="price">₹200</span>
+                        </div>
+                        <p>Crisp sweet pastry filled with vanilla custard and topped with fresh berries.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Fresh Fruit Tart" data-price="200">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="pastries">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=600&h=400&fit=crop" alt="Chocolate Éclair">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Chocolate Éclair</h3>
+                            <span class="price">₹160</span>
+                        </div>
+                        <p>Choux pastry filled with vanilla cream and topped with chocolate icing.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Chocolate Éclair" data-price="160">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chocolates -->
+                <div class="menu-card" data-category="chocolates">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=400&fit=crop" alt="Artisan Truffles">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Artisan Truffles Box</h3>
+                            <span class="price">₹450</span>
+                        </div>
+                        <p>A handpicked selection of our finest dark, milk, and white chocolate truffles.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Artisan Truffles Box" data-price="450">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="chocolates">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1511381939415-e440c9a18a0d?w=600&h=400&fit=crop" alt="Dark Chocolate Bar">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>70% Dark Chocolate Bar</h3>
+                            <span class="price">₹300</span>
+                        </div>
+                        <p>Premium single-origin dark chocolate bar with roasted almonds and sea salt.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="70% Dark Chocolate Bar" data-price="300">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="chocolates">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=600&h=400&fit=crop" alt="Hazelnut Praline">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Hazelnut Praline Box</h3>
+                            <span class="price">₹480</span>
+                        </div>
+                        <p>Delicate chocolate shells filled with smooth, roasted hazelnut praline paste.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Hazelnut Praline Box" data-price="480">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- International Specials -->
+                <div class="menu-card" data-category="international">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=400&fit=crop" alt="Macarons">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>French Macarons Box</h3>
+                            <span class="price">₹500</span>
+                        </div>
+                        <p>Colorful and delicate meringue-based cookies with assorted creamy fillings.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="French Macarons Box" data-price="500">
+                            <i class="fas fa-cart-plus"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-card" data-category="international">
+                    <div class="menu-card-img">
+                        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&h=400&fit=crop" alt="Tiramisu">
+                    </div>
+                    <div class="menu-card-content">
+                        <div class="menu-card-header">
+                            <h3>Italian Tiramisu</h3>
+                            <span class="price">₹350</span>
+                        </div>
+                        <p>Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <button class="add-to-cart-btn" data-item="Italian Tiramisu" data-price="350">
+                            <i class="fas fa-cart-plus"></i> Order Now
                         </button>
                     </div>
                 </div>
                 
-                <!-- Veg Card 2 -->
-                <div class="menu-card" data-category="veg">
+                <div class="menu-card" data-category="international">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&h=400&fit=crop" alt="Masala Dosa">
+                        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&h=400&fit=crop" alt="Baklava">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
-                            <h3>Masala Dosa</h3>
-                            <span class="price">₹120</span>
+                            <h3>Turkish Baklava</h3>
+                            <span class="price">₹400</span>
                         </div>
-                        <p>Crispy fermented crepe filled with savory potato masala, served with chutneys.</p>
-                        <button class="add-to-cart-btn" data-item="Masala Dosa">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Non-Veg Card 2 -->
-                <div class="menu-card" data-category="non-veg">
-                    <div class="menu-card-img">
-                        <img src="./images/Mutton Chukka Sukka  recipe.jpg" alt="Mutton Chukka">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Mutton Chukka</h3>
-                            <span class="price">₹300</span>
+                        <p>Rich, sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened with honey.</p>
+                        <div class="quantity-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" readonly>
+                            <button class="qty-btn plus">+</button>
                         </div>
-                        <p>Spicy, dry-roasted tender mutton pieces tossed with pepper and curry leaves.</p>
-                        <button class="add-to-cart-btn" data-item="Mutton Chukka">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Snacks Card 2 -->
-                <div class="menu-card" data-category="snacks">
-                    <div class="menu-card-img">
-                        <img src="./images/Onion-Pakoda-2-3.jpg" alt="Onion Pakoda">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Crispy Onion Pakoda</h3>
-                            <span class="price">₹45</span>
-                        </div>
-                        <p>Deep-fried onion fritters made with gram flour and aromatic Indian spices.</p>
-                        <button class="add-to-cart-btn" data-item="Crispy Onion Pakoda">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Drinks Card 2 -->
-                <div class="menu-card" data-category="drinks">
-                    <div class="menu-card-img">
-                        <img src="./images/Masala-Chai-.jpg" alt="Masala Chai">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Masala Chai</h3>
-                            <span class="price">₹30</span>
-                        </div>
-                        <p>Aromatic Indian tea brewed with milk, cardamom, ginger, and cloves.</p>
-                        <button class="add-to-cart-btn" data-item="Masala Chai">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Desserts Card 2 -->
-                <div class="menu-card" data-category="desserts">
-                    <div class="menu-card-img">
-                        <img src="./images/akkaravadisil-0525Blog.webp" alt="Paal Payasam">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Paal Payasam</h3>
-                            <span class="price">₹70</span>
-                        </div>
-                        <p>Traditional South Indian rice pudding slow-cooked in rich milk and ghee.</p>
-                        <button class="add-to-cart-btn" data-item="Paal Payasam">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Veg Card 3 -->
-                <div class="menu-card" data-category="veg">
-                    <div class="menu-card-img">
-                        <img src="./images/pongal-ven-pongal-500x500.jpg" alt="Ven Pongal">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Ven Pongal</h3>
-                            <span class="price">₹90</span>
-                        </div>
-                        <p>Comforting South Indian breakfast made of rice and lentils seasoned with black pepper and cumin.</p>
-                        <button class="add-to-cart-btn" data-item="Ven Pongal">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-                <!-- Non-Veg Card 3 -->
-                <div class="menu-card" data-category="non-veg">
-                    <div class="menu-card-img">
-                        <img src="./images/Chicken-Chettinad-Curry-2-3.jpg" alt="Chettinad Chicken">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Chettinad Chicken</h3>
-                            <span class="price">₹220</span>
-                        </div>
-                        <p>A classic South Indian dish with tender chicken slow-cooked in fiery aromatic spices.</p>
-                        <button class="add-to-cart-btn" data-item="Chettinad Chicken">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Snacks Card 3 -->
-                <div class="menu-card" data-category="snacks">
-                    <div class="menu-card-img">
-                        <img src="./images/poha_vada_featured.jpg" alt="Medu Vada">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Medu Vada</h3>
-                            <span class="price">₹50</span>
-                        </div>
-                        <p>Crispy deep-fried lentil donuts with a fluffy interior, served with coconut chutney.</p>
-                        <button class="add-to-cart-btn" data-item="Medu Vada">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Drinks Card 3 -->
-                <div class="menu-card" data-category="drinks">
-                    <div class="menu-card-img">
-                        <img src="./images/masala-buttermilk.webp" alt="Neer Mor">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Neer Mor (Buttermilk)</h3>
-                            <span class="price">₹30</span>
-                        </div>
-                        <p>Refreshing spiced buttermilk garnished with coriander, ginger, and curry leaves.</p>
-                        <button class="add-to-cart-btn" data-item="Neer Mor">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Desserts Card 3 -->
-                <div class="menu-card" data-category="desserts">
-                    <div class="menu-card-img">1
-                        <img src="./images/images.jpg" alt="Rasmalai">
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>Rasmalai</h3>
-                            <span class="price">₹80</span>
-                        </div>
-                        <p>Flattened cheese balls soaked in a sweetened, thickened milk flavored with cardamom.</p>
-                        <button class="add-to-cart-btn" data-item="Rasmalai">
-                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        <button class="add-to-cart-btn" data-item="Turkish Baklava" data-price="400">
+                            <i class="fas fa-cart-plus"></i> Order Now
                         </button>
                     </div>
                 </div>
@@ -339,8 +408,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Foodies Delight</h4>
-                    <p>Premium dining experience since 2020</p>
+                    <h4>Heavenly Bites</h4>
+                    <p>Premium dessert experience since 2026</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -348,6 +417,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="menu.html">Menu</a></li>
                         <li><a href="about.html">About</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -366,7 +436,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Foodies Delight Restaurant. All rights reserved.</p>
+                <p>&copy; 2026 Heavenly Bites Dessert Store. All rights reserved.</p>
                 <p class="developer-credit">Design and Developed by Manikandan</p>
             </div>
         </div>
@@ -376,12 +446,13 @@
     <div id="addToCartModal" class="modal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
-            <h2>Added to Cart</h2>
+            <h2>Added to Order</h2>
             <p id="modalMessage"></p>
             <button class="modal-btn">Continue Shopping</button>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <div id="toast-container"></div>
 </body>
 </html>

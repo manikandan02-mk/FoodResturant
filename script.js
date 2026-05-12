@@ -1,5 +1,9 @@
 // === FUNCTION-BASED REFACTORING ===
 
+// Global Shopping Cart
+let shoppingCart = [];
+let cartTotal = 0;
+
 // === NAVIGATION FUNCTIONALITY ===
 function initNavigation() {
     let hamburger = document.querySelector(".hamburger");
@@ -104,21 +108,70 @@ function initCarousel() {
     let nextBtn = document.querySelector(".carousel-next");
     let currentSlide = 0;
     let autoPlayInterval = null;
+    let isAnimating = false;
 
     if (slides.length === 0) return;
 
-    function showSlide(n) {
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
+    function initFirstSlide() {
+        for(let i=0; i<slides.length; i++) {
+            slides[i].style.transform = 'translateX(100%)';
+            slides[i].style.opacity = '0';
+            slides[i].classList.remove('active');
         }
+        slides[0].style.transform = 'translateX(0)';
+        slides[0].style.opacity = '1';
+        slides[0].classList.add('active');
+        if(indicators.length > 0) indicators[0].classList.add('active');
+    }
+
+    function showSlide(n, direction = 'next') {
+        if (n === currentSlide || isAnimating) return;
+        isAnimating = true;
+
+        let outgoing = slides[currentSlide];
+        let incoming = slides[n];
+
+        // Position incoming slide without animation
+        incoming.style.transition = 'none';
+        if (direction === 'next') {
+            incoming.style.transform = 'translateX(100%)';
+        } else {
+            incoming.style.transform = 'translateX(-100%)';
+        }
+        incoming.style.opacity = '0';
+        incoming.classList.add("active");
+
+        // Force reflow
+        void incoming.offsetWidth;
+
+        // Re-enable transitions
+        incoming.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
+        outgoing.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
+
+        // Animate both
+        incoming.style.transform = 'translateX(0)';
+        incoming.style.opacity = '1';
+
+        if (direction === 'next') {
+            outgoing.style.transform = 'translateX(-100%)';
+        } else {
+            outgoing.style.transform = 'translateX(100%)';
+        }
+        outgoing.style.opacity = '0';
+
+        // Update indicators
         for (let i = 0; i < indicators.length; i++) {
             indicators[i].classList.remove("active");
         }
+        if (indicators.length > n) indicators[n].classList.add("active");
 
-        slides[n].classList.add("active");
-        if (indicators.length > n) {
-            indicators[n].classList.add("active");
-        }
+        // Cleanup
+        setTimeout(() => {
+            outgoing.classList.remove("active");
+            isAnimating = false;
+        }, 800);
+        
+        currentSlide = n;
     }
 
     function startAutoPlay() {
@@ -135,31 +188,28 @@ function initCarousel() {
 
     function nextSlide() {
         stopAutoPlay();
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
+        let next = (currentSlide + 1) % slides.length;
+        showSlide(next, 'next');
         startAutoPlay();
     }
 
     function prevSlide() {
         stopAutoPlay();
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
+        let prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev, 'prev');
         startAutoPlay();
     }
 
     function goToSlide(n) {
+        if(n === currentSlide) return;
         stopAutoPlay();
-        currentSlide = n;
-        showSlide(currentSlide);
+        let direction = n > currentSlide ? 'next' : 'prev';
+        showSlide(n, direction);
         startAutoPlay();
     }
 
-    if (prevBtn) {
-        prevBtn.addEventListener("click", prevSlide);
-    }
-    if (nextBtn) {
-        nextBtn.addEventListener("click", nextSlide);
-    }
+    if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+    if (nextBtn) nextBtn.addEventListener("click", nextSlide);
 
     for (let i = 0; i < indicators.length; i++) {
         let iCopy = i;
@@ -168,14 +218,12 @@ function initCarousel() {
         });
     }
 
+    initFirstSlide();
     startAutoPlay();
 
     document.addEventListener("visibilitychange", function() {
-        if (document.hidden) {
-            stopAutoPlay();
-        } else {
-            startAutoPlay();
-        }
+        if (document.hidden) stopAutoPlay();
+        else startAutoPlay();
     });
 }
 
@@ -286,6 +334,41 @@ function initFormValidator() {
 }
 
 // === MODAL FUNCTIONALITY ===
+
+function showToast(itemName, quantity, totalPrice) {
+    let container = document.getElementById('toast-container');
+    if(!container) return;
+
+    let toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `
+        <div class="toast-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="toast-content">
+            <h4>Added to Cart!</h4>
+            <p>${quantity}x ${itemName} - ₹${totalPrice}</p>
+            <p style="margin-top:5px; font-weight:bold; color:var(--secondary-color);">Cart Total: ₹${cartTotal}</p>
+        </div>
+    `;
+
+    container.appendChild(toast);
+
+    // Trigger animation
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+
+    // Remove toast
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 4000);
+}
+
+// === MODAL FUNCTIONALITY ===
 function initModal() {
     let modals = document.querySelectorAll(".modal");
     
@@ -319,22 +402,26 @@ function initModal() {
         button.addEventListener("click", function(e) {
             e.preventDefault();
             let itemName = button.getAttribute("data-item");
-            let modal = document.querySelector("#addToCartModal");
-
-            if (modal) {
-                let messageElement = document.querySelector("#modalMessage");
-                if (messageElement) {
-                    messageElement.textContent = itemName + " has been added to your cart!";
-                }
-                modal.classList.add("active");
-
-                setTimeout(function() {
-                    modal.classList.remove("active");
-                }, 3000);
+            let itemPrice = parseInt(button.getAttribute("data-price") || "0");
+            
+            // Get quantity if available
+            let qtyContainer = button.previousElementSibling;
+            let qty = 1;
+            if(qtyContainer && qtyContainer.classList.contains('quantity-control')) {
+                let input = qtyContainer.querySelector('.qty-input');
+                if(input) qty = parseInt(input.value);
             }
+            
+            let itemTotalPrice = itemPrice * qty;
+            
+            shoppingCart.push({ name: itemName, price: itemPrice, quantity: qty });
+            cartTotal += itemTotalPrice;
+
+            showToast(itemName, qty, itemTotalPrice);
         });
     }
 }
+
 
 // === ACCORDION FUNCTIONALITY ===
 function initAccordion() {
@@ -425,6 +512,43 @@ function initMenuFilter() {
     }
 }
 
+// === QUANTITY CONTROLS ===
+function initQuantityControls() {
+    let minusBtns = document.querySelectorAll('.qty-btn.minus');
+    let plusBtns = document.querySelectorAll('.qty-btn.plus');
+
+    function updatePrice(btn, newQty) {
+        let card = btn.closest('.menu-card');
+        if (!card) return;
+        let orderBtn = card.querySelector('.add-to-cart-btn');
+        let priceSpan = card.querySelector('.price');
+        if (orderBtn && priceSpan) {
+            let basePrice = parseInt(orderBtn.getAttribute('data-price') || '0');
+            priceSpan.textContent = '₹' + (basePrice * newQty);
+        }
+    }
+
+    minusBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            let input = this.nextElementSibling;
+            let val = parseInt(input.value);
+            if(val > 1) {
+                input.value = val - 1;
+                updatePrice(this, val - 1);
+            }
+        });
+    });
+
+    plusBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            let input = this.previousElementSibling;
+            let val = parseInt(input.value);
+            input.value = val + 1;
+            updatePrice(this, val + 1);
+        });
+    });
+}
+
 // ==== INITIALIZATION ===
 document.addEventListener("DOMContentLoaded", function() {
     initNavigation();
@@ -434,4 +558,5 @@ document.addEventListener("DOMContentLoaded", function() {
     initModal();
     initAccordion();
     initMenuFilter();
+    initQuantityControls();
 });

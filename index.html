@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodies Delight </title>
-    <link rel="icon" type="image/png" href="./images/resturant-logo1.png">
+    <title>Heavenly Bites - Premium Desserts</title>
+    <link rel="icon" type="image/png" href="./images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -13,8 +13,8 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="./images/resturant-logo1.png" alt="Foodies Delight Logo" class="logo-icon">
-                <span>Foodies Delight</span>
+                <img src="./images/logo.png" alt="Heavenly Bites Logo" class="logo-icon" style="height: 40px; border-radius: 5px;">
+                <span>Heavenly Bites</span>
             </a>
 
             <ul class="nav-menu">
@@ -24,15 +24,18 @@
                 <li class="nav-item dropdown">
                     <a href="menu.html" class="nav-link">Menu</a>
                     <div class="dropdown-menu">
-                        <a href="menu.html?category=veg">Veg</a>
-                        <a href="menu.html?category=non-veg">Non-Veg</a>
-                        <a href="menu.html?category=snacks">Snacks</a>
-                        <a href="menu.html?category=drinks">Drinks</a>
-                        <a href="menu.html?category=desserts">Desserts</a>
+                        <a href="menu.html?category=cakes">Cakes</a>
+                        <a href="menu.html?category=ice-creams">Ice Creams</a>
+                        <a href="menu.html?category=pastries">Pastries</a>
+                        <a href="menu.html?category=chocolates">Chocolates</a>
+                        <a href="menu.html?category=international">International Specials</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="franchise.html" class="nav-link">Franchise</a>
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
@@ -57,56 +60,56 @@
     <!-- Carousel Banner -->
     <section class="carousel-section">
         <div class="carousel-container">
-            <div class="carousel-slide active" data-category="veg">
-                <img src="./images/veg-meals.png" alt="Vegetarian">
+            <div class="carousel-slide active" data-category="cakes">
+                <img src="./images/warm_carousel_cakes.png" alt="Cakes">
                 <div class="carousel-content">
-                    <h1>Fresh Veg-meals</h1>
-                    <p>Healthy and delicious vegetarian dishes</p>
-                    <a href="menu.html?category=veg" class="carousel-btn">Explore Now</a>
+                    <h1>Premium Cakes</h1>
+                    <p>Beautifully layered, delicious cakes for every occasion</p>
+                    <a href="menu.html?category=cakes" class="carousel-btn">Order Now</a>
                 </div>
             </div>
 
-            <div class="carousel-slide" data-category="non-veg">
-                <img src="./images/chicken-items.png" alt="Non-Vegetarian">
+            <div class="carousel-slide" data-category="ice-creams">
+                <img src="./images/warm_carousel_ice_creams.png" alt="Ice Creams">
                 <div class="carousel-content">
-                    <h1>Premium Meat Dishes</h1>
-                    <p>Succulent and flavorful non-vegetarian specialties</p>
-                    <a href="menu.html?category=non-veg" class="carousel-btn">Explore Now</a>
+                    <h1>Gourmet Ice Creams</h1>
+                    <p>Rich and creamy flavors made from the finest ingredients</p>
+                    <a href="menu.html?category=ice-creams" class="carousel-btn">Order Now</a>
                 </div>
             </div>
 
-            <div class="carousel-slide" data-category="snacks">
-                <img src="./images/samsa-samosas-with-meat.jpg" alt="Snacks">
+            <div class="carousel-slide" data-category="pastries">
+                <img src="./images/warm_carousel_pastries.png" alt="Pastries">
                 <div class="carousel-content">
-                    <h1>Crispy Snacks</h1>
-                    <p>Perfect appetizers and quick bites</p>
-                    <a href="menu.html?category=snacks" class="carousel-btn">Explore Now</a>
+                    <h1>French Pastries</h1>
+                    <p>Freshly baked artisanal pastries and tarts</p>
+                    <a href="menu.html?category=pastries" class="carousel-btn">Order Now</a>
                 </div>
             </div>
 
-            <div class="carousel-slide" data-category="drinks">
-                <img src="./images/drinks.png" alt="Drinks">
+            <div class="carousel-slide" data-category="chocolates">
+                <img src="./images/warm_carousel_chocolates.png" alt="Chocolates">
                 <div class="carousel-content">
-                    <h1>Refreshing Beverages</h1>
-                    <p>Cool drinks to complement your meal</p>
-                    <a href="menu.html?category=drinks" class="carousel-btn">Explore Now</a>
+                    <h1>Artisan Chocolates</h1>
+                    <p>Luxury truffles and rich chocolate creations</p>
+                    <a href="menu.html?category=chocolates" class="carousel-btn">Order Now</a>
                 </div>
             </div>
 
-            <div class="carousel-slide" data-category="desserts">
-                <img src="./images/desserts.png" alt="Desserts">
+            <div class="carousel-slide" data-category="international">
+                <img src="./images/warm_carousel_international.png" alt="International Specials">
                 <div class="carousel-content">
-                    <h1>Sweet Indulgences</h1>
-                    <p>Delightful desserts to end your meal</p>
-                    <a href="menu.html?category=desserts" class="carousel-btn">Explore Now</a>
+                    <h1>International Specials</h1>
+                    <p>Exquisite desserts from around the world</p>
+                    <a href="menu.html?category=international" class="carousel-btn">Order Now</a>
                 </div>
             </div>
 
             <button class="carousel-prev">
-                <i class="fas fa-chevron-left"></i>
+                <i class="fas fa-chevron-up"></i>
             </button>
             <button class="carousel-next">
-                <i class="fas fa-chevron-right"></i>
+                <i class="fas fa-chevron-down"></i>
             </button>
 
             <div class="carousel-indicators">
@@ -122,27 +125,27 @@
     <!-- Featured Section -->
     <section class="featured-section">
         <div class="container">
-            <h2>Why Choose Foodies Delight?</h2>
+            <h2>Why Choose Heavenly Bites?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <i class="fas fa-leaf"></i>
-                    <h3>Fresh Ingredients</h3>
-                    <p>We use only the freshest and finest ingredients sourced locally.</p>
+                    <h3>Finest Ingredients</h3>
+                    <p>We use premium cocoa, fresh dairy, and high-quality seasonal fruits.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fa-solid fa-person"></i>
-                    <h3>Expert Chefs</h3>
-                    <p>Our talented team brings culinary excellence to every dish.</p>
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <h3>Master Pastry Chefs</h3>
+                    <p>Our talented team brings sweet culinary excellence to every dessert.</p>
                 </div>
                 <div class="feature-card">
                     <i class="fas fa-heart"></i>
-                    <h3>Quality Service</h3>
-                    <p>We prioritize your experience with exceptional customer service.</p>
+                    <h3>Made with Love</h3>
+                    <p>Every pastry and cake is crafted to bring joy and sweetness to your day.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-star"></i>
+                    <i class="fas fa-award"></i>
                     <h3>Award Winning</h3>
-                    <p>Recognized for our dedication to culinary excellence.</p>
+                    <p>Recognized globally for our dedication to dessert perfection.</p>
                 </div>
             </div>
         </div>
@@ -153,8 +156,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Foodies Delight</h4>
-                    <p>Premium dining experience since 2020</p>
+                    <h4>Heavenly Bites</h4>
+                    <p>Premium dessert experience since 2026</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -162,6 +165,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="menu.html">Menu</a></li>
                         <li><a href="about.html">About</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -180,7 +184,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Foodies Delight Restaurant. All rights reserved.</p>
+                <p>&copy; 2026 Heavenly Bites Dessert Store. All rights reserved.</p>
                 <p class="developer-credit">Design and Developed by Manikandan</p>
             </div>
         </div>
