@@ -6,342 +6,344 @@ let cartTotal = 0;
 
 // === NAVIGATION FUNCTIONALITY ===
 function initNavigation() {
-    let hamburger = document.querySelector(".hamburger");
-    let navMenu = document.querySelector(".nav-menu");
-    let navLinks = document.querySelectorAll(".nav-link");
-    let dropdown = document.querySelector(".dropdown");
-    
-    function toggleMenu() {
-        if (hamburger && navMenu) {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        }
-    }
-    
-    function closeMenu() {
-        if (hamburger && navMenu) {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }
-        if (dropdown) {
-            dropdown.classList.remove("active");
-        }
-    }
+  let hamburger = document.querySelector(".hamburger");
+  let navMenu = document.querySelector(".nav-menu");
+  let navLinks = document.querySelectorAll(".nav-link");
+  let dropdown = document.querySelector(".dropdown");
 
-    if (hamburger) {
-        hamburger.addEventListener("click", toggleMenu);
+  function toggleMenu() {
+    if (hamburger && navMenu) {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+  }
+
+  function closeMenu() {
+    if (hamburger && navMenu) {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+    if (dropdown) {
+      dropdown.classList.remove("active");
+    }
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener("click", toggleMenu);
+  }
+
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener("click", closeMenu);
+  }
+
+  if (dropdown) {
+    let dropdownLink = dropdown.querySelector(".nav-link");
+    if (dropdownLink) {
+      dropdownLink.addEventListener("click", function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle("active");
+        }
+      });
+    }
+  }
+
+  function setActiveLink() {
+    let pathParts = window.location.pathname.split("/");
+    let currentPage = pathParts[pathParts.length - 1];
+    if (currentPage === "") {
+      currentPage = "index.php";
     }
 
     for (let i = 0; i < navLinks.length; i++) {
-        navLinks[i].addEventListener("click", closeMenu);
+      navLinks[i].classList.remove("active");
+      if (navLinks[i].getAttribute("href") === currentPage) {
+        navLinks[i].classList.add("active");
+      }
     }
+  }
 
-    if (dropdown) {
-        let dropdownLink = dropdown.querySelector(".nav-link");
-        if (dropdownLink) {
-            dropdownLink.addEventListener("click", function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle("active");
-                }
-            });
-        }
-    }
+  setActiveLink();
 
-    function setActiveLink() {
-        let pathParts = window.location.pathname.split("/");
-        let currentPage = pathParts[pathParts.length - 1];
-        if (currentPage === "") {
-            currentPage = "index.html";
-        }
-        
-        for (let i = 0; i < navLinks.length; i++) {
-            navLinks[i].classList.remove("active");
-            if (navLinks[i].getAttribute("href") === currentPage) {
-                navLinks[i].classList.add("active");
-            }
-        }
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      closeMenu();
     }
-    
-    setActiveLink();
-    
-    window.addEventListener("resize", function() {
-        if (window.innerWidth > 768) {
-            closeMenu();
-        }
-    });
+  });
 }
 
 // === SEARCH FUNCTIONALITY ===
 function initSearch() {
-    let searchInput = document.querySelector(".search-input");
-    let searchBtn = document.querySelector(".search-btn");
+  let searchInput = document.querySelector(".search-input");
+  let searchBtn = document.querySelector(".search-btn");
 
-    function handleSearch() {
-        if (searchInput) {
-            let query = searchInput.value.trim();
-            if (query !== "") {
-                console.log("Searching for:", query);
-                window.location.href = "menu.html?search=" + encodeURIComponent(query);
-            }
-        }
-    }
-
-    if (searchBtn) {
-        searchBtn.addEventListener("click", handleSearch);
-    }
-
+  function handleSearch() {
     if (searchInput) {
-        searchInput.addEventListener("keypress", function(e) {
-            if (e.key === "Enter") {
-                handleSearch();
-            }
-        });
+      let query = searchInput.value.trim();
+      if (query !== "") {
+        console.log("Searching for:", query);
+        window.location.href = "menu.php?search=" + encodeURIComponent(query);
+      }
     }
+  }
+
+  if (searchBtn) {
+    searchBtn.addEventListener("click", handleSearch);
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        handleSearch();
+      }
+    });
+  }
 }
 
 // === CAROUSEL FUNCTIONALITY ===
 function initCarousel() {
-    let slides = document.querySelectorAll(".carousel-slide");
-    let indicators = document.querySelectorAll(".indicator");
-    let prevBtn = document.querySelector(".carousel-prev");
-    let nextBtn = document.querySelector(".carousel-next");
-    let currentSlide = 0;
-    let autoPlayInterval = null;
-    let isAnimating = false;
+  let slides = document.querySelectorAll(".carousel-slide");
+  let indicators = document.querySelectorAll(".indicator");
+  let prevBtn = document.querySelector(".carousel-prev");
+  let nextBtn = document.querySelector(".carousel-next");
+  let currentSlide = 0;
+  let autoPlayInterval = null;
+  let isAnimating = false;
 
-    if (slides.length === 0) return;
+  if (slides.length === 0) return;
 
-    function initFirstSlide() {
-        for(let i=0; i<slides.length; i++) {
-            slides[i].style.transform = 'translateX(100%)';
-            slides[i].style.opacity = '0';
-            slides[i].classList.remove('active');
-        }
-        slides[0].style.transform = 'translateX(0)';
-        slides[0].style.opacity = '1';
-        slides[0].classList.add('active');
-        if(indicators.length > 0) indicators[0].classList.add('active');
+  function initFirstSlide() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.transform = "translateX(100%)";
+      slides[i].style.opacity = "0";
+      slides[i].classList.remove("active");
     }
+    slides[0].style.transform = "translateX(0)";
+    slides[0].style.opacity = "1";
+    slides[0].classList.add("active");
+    if (indicators.length > 0) indicators[0].classList.add("active");
+  }
 
-    function showSlide(n, direction = 'next') {
-        if (n === currentSlide || isAnimating) return;
-        isAnimating = true;
+  function showSlide(n, direction = "next") {
+    if (n === currentSlide || isAnimating) return;
+    isAnimating = true;
 
-        let outgoing = slides[currentSlide];
-        let incoming = slides[n];
+    let outgoing = slides[currentSlide];
+    let incoming = slides[n];
 
-        // Position incoming slide without animation
-        incoming.style.transition = 'none';
-        if (direction === 'next') {
-            incoming.style.transform = 'translateX(100%)';
-        } else {
-            incoming.style.transform = 'translateX(-100%)';
-        }
-        incoming.style.opacity = '0';
-        incoming.classList.add("active");
-
-        // Force reflow
-        void incoming.offsetWidth;
-
-        // Re-enable transitions
-        incoming.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
-        outgoing.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
-
-        // Animate both
-        incoming.style.transform = 'translateX(0)';
-        incoming.style.opacity = '1';
-
-        if (direction === 'next') {
-            outgoing.style.transform = 'translateX(-100%)';
-        } else {
-            outgoing.style.transform = 'translateX(100%)';
-        }
-        outgoing.style.opacity = '0';
-
-        // Update indicators
-        for (let i = 0; i < indicators.length; i++) {
-            indicators[i].classList.remove("active");
-        }
-        if (indicators.length > n) indicators[n].classList.add("active");
-
-        // Cleanup
-        setTimeout(() => {
-            outgoing.classList.remove("active");
-            isAnimating = false;
-        }, 800);
-        
-        currentSlide = n;
+    // Position incoming slide without animation
+    incoming.style.transition = "none";
+    if (direction === "next") {
+      incoming.style.transform = "translateX(100%)";
+    } else {
+      incoming.style.transform = "translateX(-100%)";
     }
+    incoming.style.opacity = "0";
+    incoming.classList.add("active");
 
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(function() {
-            nextSlide();
-        }, 5000);
+    // Force reflow
+    void incoming.offsetWidth;
+
+    // Re-enable transitions
+    incoming.style.transition =
+      "transform 0.8s ease-in-out, opacity 0.8s ease-in-out";
+    outgoing.style.transition =
+      "transform 0.8s ease-in-out, opacity 0.8s ease-in-out";
+
+    // Animate both
+    incoming.style.transform = "translateX(0)";
+    incoming.style.opacity = "1";
+
+    if (direction === "next") {
+      outgoing.style.transform = "translateX(-100%)";
+    } else {
+      outgoing.style.transform = "translateX(100%)";
     }
+    outgoing.style.opacity = "0";
 
-    function stopAutoPlay() {
-        if (autoPlayInterval !== null) {
-            clearInterval(autoPlayInterval);
-        }
-    }
-
-    function nextSlide() {
-        stopAutoPlay();
-        let next = (currentSlide + 1) % slides.length;
-        showSlide(next, 'next');
-        startAutoPlay();
-    }
-
-    function prevSlide() {
-        stopAutoPlay();
-        let prev = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(prev, 'prev');
-        startAutoPlay();
-    }
-
-    function goToSlide(n) {
-        if(n === currentSlide) return;
-        stopAutoPlay();
-        let direction = n > currentSlide ? 'next' : 'prev';
-        showSlide(n, direction);
-        startAutoPlay();
-    }
-
-    if (prevBtn) prevBtn.addEventListener("click", prevSlide);
-    if (nextBtn) nextBtn.addEventListener("click", nextSlide);
-
+    // Update indicators
     for (let i = 0; i < indicators.length; i++) {
-        let iCopy = i;
-        indicators[i].addEventListener("click", function() {
-            goToSlide(iCopy);
-        });
+      indicators[i].classList.remove("active");
     }
+    if (indicators.length > n) indicators[n].classList.add("active");
 
-    initFirstSlide();
+    // Cleanup
+    setTimeout(() => {
+      outgoing.classList.remove("active");
+      isAnimating = false;
+    }, 800);
+
+    currentSlide = n;
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(function () {
+      nextSlide();
+    }, 5000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval !== null) {
+      clearInterval(autoPlayInterval);
+    }
+  }
+
+  function nextSlide() {
+    stopAutoPlay();
+    let next = (currentSlide + 1) % slides.length;
+    showSlide(next, "next");
     startAutoPlay();
+  }
 
-    document.addEventListener("visibilitychange", function() {
-        if (document.hidden) stopAutoPlay();
-        else startAutoPlay();
+  function prevSlide() {
+    stopAutoPlay();
+    let prev = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prev, "prev");
+    startAutoPlay();
+  }
+
+  function goToSlide(n) {
+    if (n === currentSlide) return;
+    stopAutoPlay();
+    let direction = n > currentSlide ? "next" : "prev";
+    showSlide(n, direction);
+    startAutoPlay();
+  }
+
+  if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+  if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+
+  for (let i = 0; i < indicators.length; i++) {
+    let iCopy = i;
+    indicators[i].addEventListener("click", function () {
+      goToSlide(iCopy);
     });
+  }
+
+  initFirstSlide();
+  startAutoPlay();
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) stopAutoPlay();
+    else startAutoPlay();
+  });
 }
 
 // === FORM VALIDATION ===
 function initFormValidator() {
-    let form = document.querySelector("#contactForm");
-    if (!form) return;
+  let form = document.querySelector("#contactForm");
+  if (!form) return;
 
-    function validateField(field) {
-        let value = field.value.trim();
-        let errorElement = document.querySelector("#" + field.id + "Error");
-        let error = "";
+  function validateField(field) {
+    let value = field.value.trim();
+    let errorElement = document.querySelector("#" + field.id + "Error");
+    let error = "";
 
-        if (field.hasAttribute("required") && value === "") {
-            error = "This field is required";
-        } else if (field.type === "email" && value !== "") {
-            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(value)) {
-                error = "Please enter a valid email address";
-            }
-        } else if (field.id === "phone" && value !== "") {
-            let phoneRegex = /^\d{10}$/;
-            if (!phoneRegex.test(value)) {
-                error = "Please enter a valid phone number";
-            }
-        } else if (field.id === "name" && value !== "") {
-            if (value.length < 2) {
-                error = "Name must be at least 2 characters";
-            }
-        } else if (field.id === "message" && value !== "") {
-            if (value.length < 10) {
-                error = "Message must be at least 10 characters";
-            }
-        }
-
-        if (error !== "") {
-            field.classList.add("error");
-            if (errorElement) {
-                errorElement.textContent = error;
-            }
-            return false;
-        } else {
-            field.classList.remove("error");
-            if (errorElement) {
-                errorElement.textContent = "";
-            }
-            return true;
-        }
+    if (field.hasAttribute("required") && value === "") {
+      error = "This field is required";
+    } else if (field.type === "email" && value !== "") {
+      let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        error = "Please enter a valid email address";
+      }
+    } else if (field.id === "phone" && value !== "") {
+      let phoneRegex = /^\d{10}$/;
+      if (!phoneRegex.test(value)) {
+        error = "Please enter a valid phone number";
+      }
+    } else if (field.id === "name" && value !== "") {
+      if (value.length < 2) {
+        error = "Name must be at least 2 characters";
+      }
+    } else if (field.id === "message" && value !== "") {
+      if (value.length < 10) {
+        error = "Message must be at least 10 characters";
+      }
     }
 
-    function clearError(field) {
-        let errorElement = document.querySelector("#" + field.id + "Error");
-        if (field.classList.contains("error")) {
-            field.classList.remove("error");
-            if (errorElement) {
-                errorElement.textContent = "";
-            }
-        }
+    if (error !== "") {
+      field.classList.add("error");
+      if (errorElement) {
+        errorElement.textContent = error;
+      }
+      return false;
+    } else {
+      field.classList.remove("error");
+      if (errorElement) {
+        errorElement.textContent = "";
+      }
+      return true;
+    }
+  }
+
+  function clearError(field) {
+    let errorElement = document.querySelector("#" + field.id + "Error");
+    if (field.classList.contains("error")) {
+      field.classList.remove("error");
+      if (errorElement) {
+        errorElement.textContent = "";
+      }
+    }
+  }
+
+  function submitForm() {
+    let modal = document.querySelector("#successModal");
+    if (!modal) return;
+
+    modal.classList.add("active");
+    form.reset();
+
+    let closeBtn = modal.querySelector(".modal-close");
+    let btn = modal.querySelector(".modal-btn");
+
+    function closeModal() {
+      modal.classList.remove("active");
     }
 
-    function submitForm() {
-        let modal = document.querySelector("#successModal");
-        if (modal) {
-            modal.classList.add("active");
-            form.reset();
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (btn) btn.addEventListener("click", closeModal);
+  }
 
-            let closeBtn = modal.querySelector(".modal-close");
-            let btn = modal.querySelector(".modal-btn");
-
-            function closeModal() {
-                modal.classList.remove("active");
-            }
-
-            if (closeBtn) closeBtn.addEventListener("click", closeModal);
-            if (btn) btn.addEventListener("click", closeModal);
-
-            setTimeout(closeModal, 5000);
-        }
-    }
-
-    let inputs = form.querySelectorAll("input, textarea, select");
-    for (let i = 0; i < inputs.length; i++) {
-        let input = inputs[i];
-        input.addEventListener("blur", function() {
-            validateField(input);
-        });
-        input.addEventListener("input", function() {
-            clearError(input);
-        });
-    }
-
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        let reqInputs = form.querySelectorAll("input[required], textarea[required], select[required]");
-        let isValid = true;
-
-        for (let i = 0; i < reqInputs.length; i++) {
-            if (!validateField(reqInputs[i])) {
-                isValid = false;
-            }
-        }
-
-        if (isValid) {
-            submitForm();
-        }
+  let inputs = form.querySelectorAll("input, textarea, select");
+  for (let i = 0; i < inputs.length; i++) {
+    let input = inputs[i];
+    input.addEventListener("blur", function () {
+      validateField(input);
     });
+    input.addEventListener("input", function () {
+      clearError(input);
+    });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let reqInputs = form.querySelectorAll(
+      "input[required], textarea[required], select[required]",
+    );
+    let isValid = true;
+
+    for (let i = 0; i < reqInputs.length; i++) {
+      if (!validateField(reqInputs[i])) {
+        isValid = false;
+      }
+    }
+
+    if (isValid) {
+      submitForm();
+    }
+  });
 }
 
 // === MODAL FUNCTIONALITY ===
 
 function showToast(itemName, quantity, totalPrice) {
-    let container = document.getElementById('toast-container');
-    if(!container) return;
+  let container = document.getElementById("toast-container");
+  if (!container) return;
 
-    let toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.innerHTML = `
+  let toast = document.createElement("div");
+  toast.className = "toast";
+  toast.innerHTML = `
         <div class="toast-icon">
             <i class="fas fa-check-circle"></i>
         </div>
@@ -352,211 +354,273 @@ function showToast(itemName, quantity, totalPrice) {
         </div>
     `;
 
-    container.appendChild(toast);
+  container.appendChild(toast);
 
-    // Trigger animation
-    setTimeout(() => {
-        toast.classList.add('show');
-    }, 10);
+  // Trigger animation
+  setTimeout(() => {
+    toast.classList.add("show");
+  }, 10);
 
-    // Remove toast
+  // Remove toast
+  setTimeout(() => {
+    toast.classList.remove("show");
     setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => {
-            toast.remove();
-        }, 300);
-    }, 4000);
+      toast.remove();
+    }, 300);
+  }, 4000);
 }
 
 // === MODAL FUNCTIONALITY ===
 function initModal() {
-    let modals = document.querySelectorAll(".modal");
-    
-    for (let i = 0; i < modals.length; i++) {
-        let modal = modals[i];
-        let closeBtn = modal.querySelector(".modal-close");
-        let btn = modal.querySelector(".modal-btn");
+  let modals = document.querySelectorAll(".modal");
 
-        if (closeBtn) {
-            closeBtn.addEventListener("click", function() {
-                modal.classList.remove("active");
-            });
-        }
+  for (let i = 0; i < modals.length; i++) {
+    let modal = modals[i];
+    let closeBtn = modal.querySelector(".modal-close");
+    let btn = modal.querySelector(".modal-btn");
 
-        if (btn && btn.textContent.indexOf("Continue") !== -1) {
-            btn.addEventListener("click", function() {
-                modal.classList.remove("active");
-            });
-        }
-
-        modal.addEventListener("click", function(e) {
-            if (e.target === modal) {
-                modal.classList.remove("active");
-            }
-        });
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
     }
 
-    let addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
-    for (let i = 0; i < addToCartButtons.length; i++) {
-        let button = addToCartButtons[i];
-        button.addEventListener("click", function(e) {
-            e.preventDefault();
-            let itemName = button.getAttribute("data-item");
-            let itemPrice = parseInt(button.getAttribute("data-price") || "0");
-            
-            // Get quantity if available
-            let qtyContainer = button.previousElementSibling;
-            let qty = 1;
-            if(qtyContainer && qtyContainer.classList.contains('quantity-control')) {
-                let input = qtyContainer.querySelector('.qty-input');
-                if(input) qty = parseInt(input.value);
-            }
-            
-            let itemTotalPrice = itemPrice * qty;
-            
-            shoppingCart.push({ name: itemName, price: itemPrice, quantity: qty });
-            cartTotal += itemTotalPrice;
-
-            showToast(itemName, qty, itemTotalPrice);
-        });
+    if (btn && btn.textContent.indexOf("Continue") !== -1) {
+      btn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
     }
+
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+  }
+
+  let addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+  for (let i = 0; i < addToCartButtons.length; i++) {
+    let button = addToCartButtons[i];
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      let itemName = button.getAttribute("data-item");
+      let itemPrice = parseInt(button.getAttribute("data-price") || "0");
+
+      // Get quantity if available
+      let qty = 1;
+      let card = button.closest(".menu-card");
+      if (card) {
+        let input = card.querySelector(".qty-input");
+        if (input) qty = parseInt(input.value);
+      }
+
+      let itemTotalPrice = itemPrice * qty;
+
+      shoppingCart.push({ name: itemName, price: itemPrice, quantity: qty });
+      cartTotal += itemTotalPrice;
+
+      showToast(itemName, qty, itemTotalPrice);
+    });
+  }
 }
-
 
 // === ACCORDION FUNCTIONALITY ===
 function initAccordion() {
-    let accordions = document.querySelectorAll(".accordion-header");
-    for (let i = 0; i < accordions.length; i++) {
-        let header = accordions[i];
-        header.addEventListener("click", function() {
-            let activeHeader = document.querySelector(".accordion-header.active");
-            if (activeHeader && activeHeader !== header) {
-                activeHeader.classList.remove("active");
-                activeHeader.nextElementSibling.style.maxHeight = null;
-            }
-            
-            header.classList.toggle("active");
-            let content = header.nextElementSibling;
-            if (header.classList.contains("active")) {
-                content.style.maxHeight = content.scrollHeight + "px";
-            } else {
-                content.style.maxHeight = null;
-            }
-        });
-    }
+  let accordions = document.querySelectorAll(".accordion-header");
+  for (let i = 0; i < accordions.length; i++) {
+    let header = accordions[i];
+    header.addEventListener("click", function () {
+      let activeHeader = document.querySelector(".accordion-header.active");
+      if (activeHeader && activeHeader !== header) {
+        activeHeader.classList.remove("active");
+        activeHeader.nextElementSibling.style.maxHeight = null;
+      }
+
+      header.classList.toggle("active");
+      let content = header.nextElementSibling;
+      if (header.classList.contains("active")) {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } else {
+        content.style.maxHeight = null;
+      }
+    });
+  }
 }
 
 // === MENU FILTER FUNCTIONALITY ===
 function initMenuFilter() {
-    let categoryBtns = document.querySelectorAll(".category-btn");
-    let menuCards = document.querySelectorAll(".menu-card");
+  let categoryBtns = document.querySelectorAll(".category-btn");
+  let menuCards = document.querySelectorAll(".menu-card");
 
-    if (categoryBtns.length === 0 || menuCards.length === 0) return;
+  if (categoryBtns.length === 0 || menuCards.length === 0) return;
 
-    for (let i = 0; i < categoryBtns.length; i++) {
-        let btn = categoryBtns[i];
-        btn.addEventListener("click", function() {
-            // Remove active class from all
-            for (let j = 0; j < categoryBtns.length; j++) {
-                categoryBtns[j].classList.remove("active");
-            }
-            // Add active class to clicked
-            btn.classList.add("active");
+  for (let i = 0; i < categoryBtns.length; i++) {
+    let btn = categoryBtns[i];
+    btn.addEventListener("click", function () {
+      // Remove active class from all
+      for (let j = 0; j < categoryBtns.length; j++) {
+        categoryBtns[j].classList.remove("active");
+      }
+      // Add active class to clicked
+      btn.classList.add("active");
 
-            let filterValue = btn.getAttribute("data-filter");
+      let filterValue = btn.getAttribute("data-filter");
 
-            // Filter items
-            for (let k = 0; k < menuCards.length; k++) {
-                let card = menuCards[k];
-                if (filterValue === "all") {
-                    card.style.display = "flex";
-                } else {
-                    if (card.getAttribute("data-category") === filterValue) {
-                        card.style.display = "flex";
-                    } else {
-                        card.style.display = "none";
-                    }
-                }
-            }
-        });
+      // Filter items
+      for (let k = 0; k < menuCards.length; k++) {
+        let card = menuCards[k];
+        if (filterValue === "all") {
+          card.style.display = "flex";
+        } else {
+          if (card.getAttribute("data-category") === filterValue) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        }
+      }
+    });
+  }
+
+  // Handle URL parameters for immediate filtering
+  let urlParams = new URLSearchParams(window.location.search);
+  let categoryParam = urlParams.get("category");
+  let searchParam = urlParams.get("search");
+
+  if (categoryParam) {
+    let targetBtn = document.querySelector(
+      ".category-btn[data-filter='" + categoryParam + "']",
+    );
+    if (targetBtn) {
+      targetBtn.click();
+    }
+  } else if (searchParam) {
+    for (let j = 0; j < categoryBtns.length; j++) {
+      categoryBtns[j].classList.remove("active");
     }
 
-    // Handle URL parameters for immediate filtering
-    let urlParams = new URLSearchParams(window.location.search);
-    let categoryParam = urlParams.get('category');
-    let searchParam = urlParams.get('search');
+    let searchTerm = searchParam.toLowerCase();
 
-    if (categoryParam) {
-        let targetBtn = document.querySelector(".category-btn[data-filter='" + categoryParam + "']");
-        if (targetBtn) {
-            targetBtn.click();
-        }
-    } else if (searchParam) {
-        for (let j = 0; j < categoryBtns.length; j++) {
-            categoryBtns[j].classList.remove("active");
-        }
-        
-        let searchTerm = searchParam.toLowerCase();
-        
-        for (let k = 0; k < menuCards.length; k++) {
-            let card = menuCards[k];
-            let title = card.querySelector("h3").textContent.toLowerCase();
-            let desc = card.querySelector("p").textContent.toLowerCase();
-            
-            if (title.indexOf(searchTerm) !== -1 || desc.indexOf(searchTerm) !== -1) {
-                card.style.display = "flex";
-            } else {
-                card.style.display = "none";
-            }
-        }
+    for (let k = 0; k < menuCards.length; k++) {
+      let card = menuCards[k];
+      let title = card.querySelector("h3").textContent.toLowerCase();
+      let desc = card.querySelector("p").textContent.toLowerCase();
+
+      if (title.indexOf(searchTerm) !== -1 || desc.indexOf(searchTerm) !== -1) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
     }
+  }
 }
 
 // === QUANTITY CONTROLS ===
 function initQuantityControls() {
-    let minusBtns = document.querySelectorAll('.qty-btn.minus');
-    let plusBtns = document.querySelectorAll('.qty-btn.plus');
+  let minusBtns = document.querySelectorAll(".qty-btn.minus");
+  let plusBtns = document.querySelectorAll(".qty-btn.plus");
 
-    function updatePrice(btn, newQty) {
-        let card = btn.closest('.menu-card');
-        if (!card) return;
-        let orderBtn = card.querySelector('.add-to-cart-btn');
-        let priceSpan = card.querySelector('.price');
-        if (orderBtn && priceSpan) {
-            let basePrice = parseInt(orderBtn.getAttribute('data-price') || '0');
-            priceSpan.textContent = '₹' + (basePrice * newQty);
-        }
+  function updatePrice(btn, newQty) {
+    let card = btn.closest(".menu-card");
+    if (!card) return;
+    let orderBtn = card.querySelector(".add-to-cart-btn");
+    let priceSpan = card.querySelector(".price");
+    if (orderBtn && priceSpan) {
+      let basePrice = parseInt(orderBtn.getAttribute("data-price") || "0");
+      priceSpan.textContent = "₹" + basePrice * newQty;
     }
+  }
 
-    minusBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            let input = this.nextElementSibling;
-            let val = parseInt(input.value);
-            if(val > 1) {
-                input.value = val - 1;
-                updatePrice(this, val - 1);
-            }
-        });
+  minusBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      let input = this.nextElementSibling;
+      let val = parseInt(input.value);
+      if (val > 1) {
+        input.value = val - 1;
+        updatePrice(this, val - 1);
+      }
     });
+  });
 
-    plusBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            let input = this.previousElementSibling;
-            let val = parseInt(input.value);
-            input.value = val + 1;
-            updatePrice(this, val + 1);
-        });
+  plusBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      let input = this.previousElementSibling;
+      let val = parseInt(input.value);
+      input.value = val + 1;
+      updatePrice(this, val + 1);
     });
+  });
 }
 
 // ==== INITIALIZATION ===
-document.addEventListener("DOMContentLoaded", function() {
-    initNavigation();
-    initSearch();
-    initCarousel();
-    initFormValidator();
-    initModal();
-    initAccordion();
-    initMenuFilter();
-    initQuantityControls();
+document.addEventListener("DOMContentLoaded", function () {
+  initNavigation();
+  initSearch();
+  initCarousel();
+  initFormValidator();
+  initModal();
+  initAccordion();
+  initMenuFilter();
+  initQuantityControls();
 });
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("login.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === "success") {
+        // Redirect to dashboard or home
+        window.location.href = "index.php";
+      } else {
+        const errorDiv = document.getElementById("loginError");
+        errorDiv.textContent = data.message;
+        errorDiv.classList.add("active");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      const errorDiv = document.getElementById("loginError");
+      errorDiv.textContent =
+        "An error occurred while connecting to the server.";
+      errorDiv.classList.add("active");
+    });
+});
+
+// Franchise form submission
+// const franchiseForm = document.getElementById("franchiseForm");
+// if (franchiseForm) {
+//   franchiseForm.addEventListener("submit", function (e) {
+//     e.preventDefault();
+
+//     const formData = new FormData(this);
+
+//     // Dynamic submission to same file
+//     fetch("franchise.php", {
+//       method: "POST",
+//       body: formData,
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         if (data.status === "success") {
+//           document.getElementById("successModal").classList.add("active");
+//           this.reset();
+//         } else {
+//           alert(
+//             data.message || "Error submitting application. Please try again.",
+//           );
+//         }
+//       })
+//       .catch((error) => {
+//         console.error("Error:", error);
+//         alert("An error occurred. Please try again.");
+//       });
+//   });
+// }
+
+
