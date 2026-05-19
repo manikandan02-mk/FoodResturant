@@ -563,34 +563,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initMenuFilter();
   initQuantityControls();
 });
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
-
-  fetch("login.php", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.status === "success") {
-        // Redirect to dashboard or home
-        window.location.href = "index.php";
-      } else {
-        const errorDiv = document.getElementById("loginError");
-        errorDiv.textContent = data.message;
-        errorDiv.classList.add("active");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      const errorDiv = document.getElementById("loginError");
-      errorDiv.textContent =
-        "An error occurred while connecting to the server.";
-      errorDiv.classList.add("active");
-    });
-});
 
 // Franchise form submission
 // const franchiseForm = document.getElementById("franchiseForm");
