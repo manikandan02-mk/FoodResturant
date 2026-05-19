@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heavenly Bites - Premium Desserts</title>
     <link rel="icon" type="image/png" href="./images/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.php" class="logo">
-                <img src="./images/logo.png" alt="Heavenly Bites Logo" class="logo-icon" style="height: 40px; border-radius: 5px;">
+                <img src="./images/logo.png" alt="Heavenly Bites Logo" class="logo-icon"
+                    style="height: 40px; border-radius: 5px;">
                 <span>Heavenly Bites</span>
             </a>
 
@@ -66,7 +71,7 @@
                 <div class="carousel-content">
                     <h1>Premium Cakes</h1>
                     <p>Beautifully layered, delicious cakes for every occasion</p>
-                    <a href="menu.php?category=cakes" class="carousel-btn">Order Now</a>
+                    <a href="menu.php?category=cakes" class="carousel-btn">Add to cart</a>
                 </div>
             </div>
 
@@ -75,7 +80,7 @@
                 <div class="carousel-content">
                     <h1>Gourmet Ice Creams</h1>
                     <p>Rich and creamy flavors made from the finest ingredients</p>
-                    <a href="menu.php?category=ice-creams" class="carousel-btn">Order Now</a>
+                    <a href="menu.php?category=ice-creams" class="carousel-btn">Add to cart</a>
                 </div>
             </div>
 
@@ -84,7 +89,7 @@
                 <div class="carousel-content">
                     <h1>French Pastries</h1>
                     <p>Freshly baked artisanal pastries and tarts</p>
-                    <a href="menu.php?category=pastries" class="carousel-btn">Order Now</a>
+                    <a href="menu.php?category=pastries" class="carousel-btn">Add to cart</a>
                 </div>
             </div>
 
@@ -93,7 +98,7 @@
                 <div class="carousel-content">
                     <h1>Artisan Chocolates</h1>
                     <p>Luxury truffles and rich chocolate creations</p>
-                    <a href="menu.php?category=chocolates" class="carousel-btn">Order Now</a>
+                    <a href="menu.php?category=chocolates" class="carousel-btn">Add to cart</a>
                 </div>
             </div>
 
@@ -102,7 +107,7 @@
                 <div class="carousel-content">
                     <h1>International Specials</h1>
                     <p>Exquisite desserts from around the world</p>
-                    <a href="menu.php?category=international" class="carousel-btn">Order Now</a>
+                    <a href="menu.php?category=international" class="carousel-btn">Add to cart</a>
                 </div>
             </div>
 
@@ -152,9 +157,9 @@
         </div>
     </section>
 
-    
+
 
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>

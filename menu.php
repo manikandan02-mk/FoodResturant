@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Heavenly Bites</title>
     <link rel="icon" type="image/png" href="./images/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.php" class="logo">
-                <img src="./images/logo.png" alt="Heavenly Bites Logo" class="logo-icon" style="height: 40px; border-radius: 5px;">
+                <img src="./images/logo.png" alt="Heavenly Bites Logo" class="logo-icon"
+                    style="height: 40px; border-radius: 5px;">
                 <span>Heavenly Bites</span>
             </a>
 
@@ -94,7 +99,7 @@
                         <p>Rich and decadent layers of dark chocolate sponge and smooth truffle ganache.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Chocolate Truffle Cake" data-price="550">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -107,7 +112,8 @@
 
                 <div class="menu-card" data-category="cakes">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=600&h=400&fit=crop" alt="Red Velvet Cake">
+                        <img src="https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=600&h=400&fit=crop"
+                            alt="Red Velvet Cake">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -117,7 +123,7 @@
                         <p>Classic soft red velvet sponge layered with signature cream cheese frosting.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Red Velvet Cake" data-price="600">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -130,7 +136,8 @@
 
                 <div class="menu-card" data-category="cakes">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&h=400&fit=crop" alt="Black Forest Cake">
+                        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&h=400&fit=crop"
+                            alt="Black Forest Cake">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -140,7 +147,7 @@
                         <p>Chocolate sponge cake with a rich cherry filling based on the German dessert.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Black Forest Cake" data-price="580">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -164,7 +171,7 @@
                         <p>Classic, creamy ice cream made with real Madagascar vanilla beans.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Vanilla Bean Ice Cream" data-price="150">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -187,7 +194,7 @@
                         <p>Fresh strawberry ice cream rippled with sweet fruit compote.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Strawberry Swirl Ice Cream" data-price="180">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -200,7 +207,8 @@
 
                 <div class="menu-card" data-category="ice-creams">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1557142046-c704a3adf364?w=600&h=400&fit=crop" alt="Chocolate Fudge Ice Cream">
+                        <img src="https://images.unsplash.com/photo-1557142046-c704a3adf364?w=600&h=400&fit=crop"
+                            alt="Chocolate Fudge Ice Cream">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -210,7 +218,7 @@
                         <p>Rich chocolate ice cream blended with gooey fudge brownies.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Chocolate Fudge Ice Cream" data-price="190">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -224,7 +232,8 @@
                 <!-- Pastries -->
                 <div class="menu-card" data-category="pastries">
                     <div class="menu-card-img">
-                        <img src="./images/air-croissant-with-strawberry-syrup-top-glass-milk.jpg" alt="French Butter Croissant">
+                        <img src="./images/air-croissant-with-strawberry-syrup-top-glass-milk.jpg"
+                            alt="French Butter Croissant">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -234,7 +243,7 @@
                         <p>Authentic, flaky, and buttery pastry freshly baked every morning.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="French Butter Croissant" data-price="120">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -247,7 +256,8 @@
 
                 <div class="menu-card" data-category="pastries">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=400&fit=crop" alt="Fresh Fruit Tart">
+                        <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=400&fit=crop"
+                            alt="Fresh Fruit Tart">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -257,7 +267,7 @@
                         <p>Crisp sweet pastry filled with vanilla custard and topped with fresh berries.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Fresh Fruit Tart" data-price="200">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -270,7 +280,8 @@
 
                 <div class="menu-card" data-category="pastries">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=600&h=400&fit=crop" alt="Chocolate Éclair">
+                        <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=600&h=400&fit=crop"
+                            alt="Chocolate Éclair">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -280,7 +291,7 @@
                         <p>Choux pastry filled with vanilla cream and topped with chocolate icing.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Chocolate Éclair" data-price="160">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -294,7 +305,8 @@
                 <!-- Chocolates -->
                 <div class="menu-card" data-category="chocolates">
                     <div class="menu-card-img">
-                        <img src="./images/assortment-colorful-chocolate-truffles-arranged-metal-tray-dark-wooden-surface.jpg" alt="Artisan Truffles Box">
+                        <img src="./images/assortment-colorful-chocolate-truffles-arranged-metal-tray-dark-wooden-surface.jpg"
+                            alt="Artisan Truffles Box">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -304,7 +316,7 @@
                         <p>A handpicked selection of our finest dark, milk, and white chocolate truffles.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Artisan Truffles Box" data-price="450">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -317,7 +329,8 @@
 
                 <div class="menu-card" data-category="chocolates">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1604514813560-1e4f5726db65?w=600&h=400&fit=crop" alt="Dark Chocolate Bar">
+                        <img src="https://images.unsplash.com/photo-1604514813560-1e4f5726db65?w=600&h=400&fit=crop"
+                            alt="Dark Chocolate Bar">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -327,7 +340,7 @@
                         <p>Premium single-origin dark chocolate bar with roasted almonds and sea salt.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="70% Dark Chocolate Bar" data-price="300">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -340,7 +353,8 @@
 
                 <div class="menu-card" data-category="chocolates">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=600&h=400&fit=crop" alt="Hazelnut Praline">
+                        <img src="https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=600&h=400&fit=crop"
+                            alt="Hazelnut Praline">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -350,7 +364,7 @@
                         <p>Delicate chocolate shells filled with smooth, roasted hazelnut praline paste.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Hazelnut Praline Box" data-price="480">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -364,7 +378,8 @@
                 <!-- International Specials -->
                 <div class="menu-card" data-category="international">
                     <div class="menu-card-img">
-                        <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=400&fit=crop" alt="Macarons">
+                        <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=400&fit=crop"
+                            alt="Macarons">
                     </div>
                     <div class="menu-card-content">
                         <div class="menu-card-header">
@@ -374,7 +389,7 @@
                         <p>Colorful and delicate meringue-based cookies with assorted creamy fillings.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="French Macarons Box" data-price="500">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -397,7 +412,7 @@
                         <p>Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Italian Tiramisu" data-price="350">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -407,7 +422,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="menu-card" data-category="international">
                     <div class="menu-card-img">
                         <img src="./images/pakhlava-black-tea-served-armudu-glass.jpg" alt="Baklava">
@@ -417,10 +432,11 @@
                             <h3>Turkish Baklava</h3>
                             <span class="price">₹400</span>
                         </div>
-                        <p>Rich, sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened with honey.</p>
+                        <p>Rich, sweet dessert pastry made of layers of filo filled with chopped nuts and sweetened with
+                            honey.</p>
                         <div class="action-row">
                             <button class="add-to-cart-btn" data-item="Turkish Baklava" data-price="400">
-                                Order Now
+                                Add to cart
                             </button>
                             <div class="quantity-control">
                                 <button class="qty-btn minus">-</button>
@@ -462,7 +478,8 @@
                     <div class="social-links">
                         <a href="https://www.facebook.com/login/" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="https://twitter.com/login" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -486,5 +503,5 @@
     <script src="script.js"></script>
     <div id="toast-container"></div>
 </body>
-</html>
 
+</html>
