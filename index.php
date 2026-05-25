@@ -26,15 +26,8 @@
                 <li class="nav-item">
                     <a href="index.php" class="nav-link active">Home</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a href="menu.php" class="nav-link">Menu</a>
-                    <div class="dropdown-menu">
-                        <a href="menu.php?category=cakes">Cakes</a>
-                        <a href="menu.php?category=ice-creams">Ice Creams</a>
-                        <a href="menu.php?category=pastries">Pastries</a>
-                        <a href="menu.php?category=chocolates">Chocolates</a>
-                        <a href="menu.php?category=international">International Specials</a>
-                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="about.php" class="nav-link">About</a>
@@ -156,6 +149,47 @@
             </div>
         </div>
     </section>
+
+
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Heavenly Bites</h4>
+                    <p>Premium dessert experience since 2026</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="menu.php">Menu</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="franchise.php">Franchise</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@FoodiesDelight.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/login/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/login" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Heavenly Bites Dessert Store. All rights reserved.</p>
+                <p class="developer-credit">Design and Developed by Manikandan</p>
+            </div>
+        </div>
+    </footer>
 
 
 

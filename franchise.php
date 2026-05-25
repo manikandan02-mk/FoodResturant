@@ -67,15 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a href="menu.php" class="nav-link">Menu</a>
-                    <div class="dropdown-menu">
-                        <a href="menu.php?category=cakes">Cakes</a>
-                        <a href="menu.php?category=ice-creams">Ice Creams</a>
-                        <a href="menu.php?category=pastries">Pastries</a>
-                        <a href="menu.php?category=chocolates">Chocolates</a>
-                        <a href="menu.php?category=international">International Specials</a>
-                    </div>
                 </li>
                 <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="franchise.php" class="nav-link active">Franchise</a></li>
@@ -144,7 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <img src="./images/dessert-shop-image.png" alt="Heavenly Bites Storefront">
                 </div>
                 <div class="franchise-form-container">
-                    <form action="franchise.php" method="POST" class="contact-form">
+                    <form id="franchiseForm" action="franchise.php" method="POST" class="contact-form">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                             <div class="form-group">
                                 <label for="fname">First Name *</label>

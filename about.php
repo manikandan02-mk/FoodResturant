@@ -21,15 +21,8 @@
                 <li class="nav-item">
                     <a href="index.php" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a href="menu.php" class="nav-link">Menu</a>
-                    <div class="dropdown-menu">
-                        <a href="menu.php?category=cakes">Cakes</a>
-                        <a href="menu.php?category=ice-creams">Ice Creams</a>
-                        <a href="menu.php?category=pastries">Pastries</a>
-                        <a href="menu.php?category=chocolates">Chocolates</a>
-                        <a href="menu.php?category=international">International Specials</a>
-                    </div>
                 </li>
                 <li class="nav-item">
                     <a href="about.php" class="nav-link active">About</a>

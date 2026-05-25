@@ -9,7 +9,6 @@ function initNavigation() {
   let hamburger = document.querySelector(".hamburger");
   let navMenu = document.querySelector(".nav-menu");
   let navLinks = document.querySelectorAll(".nav-link");
-  let dropdown = document.querySelector(".dropdown");
 
   function toggleMenu() {
     if (hamburger && navMenu) {
@@ -23,9 +22,6 @@ function initNavigation() {
       hamburger.classList.remove("active");
       navMenu.classList.remove("active");
     }
-    if (dropdown) {
-      dropdown.classList.remove("active");
-    }
   }
 
   if (hamburger) {
@@ -33,35 +29,25 @@ function initNavigation() {
   }
 
   for (let i = 0; i < navLinks.length; i++) {
-    navLinks[i].addEventListener("click", closeMenu);
-  }
-
-  if (dropdown) {
-    let dropdownLink = dropdown.querySelector(".nav-link");
-    if (dropdownLink) {
-      dropdownLink.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          dropdown.classList.toggle("active");
-        }
-      });
-    }
+    navLinks[i].addEventListener("click", function () {
+      closeMenu();
+    });
   }
 
   function setActiveLink() {
-    let pathParts = window.location.pathname.split("/");
-    let currentPage = pathParts[pathParts.length - 1];
-    if (currentPage === "") {
-      currentPage = "index.php";
-    }
+  let pathParts = window.location.pathname.split("/");
+  let currentPage = pathParts[pathParts.length - 1];
+  if (currentPage === "") {
+    currentPage = "index.php";
+  }
 
-    for (let i = 0; i < navLinks.length; i++) {
-      navLinks[i].classList.remove("active");
-      if (navLinks[i].getAttribute("href") === currentPage) {
-        navLinks[i].classList.add("active");
-      }
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].classList.remove("active");
+    if (navLinks[i].getAttribute("href") === currentPage || currentPage.indexOf(navLinks[i].getAttribute("href")) !== -1) {
+      navLinks[i].classList.add("active");
     }
   }
+}
 
   setActiveLink();
 
@@ -594,5 +580,3 @@ document.addEventListener("DOMContentLoaded", function () {
 //       });
 //   });
 // }
-
-
